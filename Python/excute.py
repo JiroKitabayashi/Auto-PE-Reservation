@@ -3,7 +3,7 @@
 import requests
 import bs4
 from pprint import pprint
-import secrets
+from secr import secrets
 
 data = {
     'login': secrets.USER_NAME,
@@ -16,11 +16,11 @@ data = {
 }
 
 response = requests.post(
-    TOP_PAGE_URL, data=data)
+    secrets.BASE_URL, data=data)
 response.encoding = response.apparent_encoding
 soup = bs4.BeautifulSoup(response.text, "html.parser")
 a = soup.find_all('a')
-mypage = requests.get(TOP_PAGE_URL+a[-4].get("href"))
+mypage = requests.get(secrets.BASE_URL+a[-4].get("href"))
 soup = bs4.BeautifulSoup(mypage.text, "html.parser")
 b = soup.find_all('td')
 pprint(b[2].text)
