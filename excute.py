@@ -1,10 +1,9 @@
+# 実行ファイル
+
 import requests
 import bs4
 from pprint import pprint
-
-ID = 's18276jk'
-PASS = 'e980318Giraff'
-TOP_PAGE_URL = 'https://wellness.sfc.keio.ac.jp/v3/index.php'
+from secrets import secrets
 
 headers = {
     'Connection': 'keep-alive',
@@ -21,8 +20,8 @@ headers = {
 }
 
 data = {
-    'login': ID,
-    'password': PASS,
+    'login': secrets.USER_NAME,
+    'password': secrets.PASS,
     'submit': 'login',
     'page': 'top',
     'mode': 'login',
