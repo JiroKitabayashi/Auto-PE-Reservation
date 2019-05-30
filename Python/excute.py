@@ -3,21 +3,7 @@
 import requests
 import bs4
 from pprint import pprint
-from secrets import secrets
-
-headers = {
-    'Connection': 'keep-alive',
-    'Pragma': 'no-cache',
-    'Cache-Control': 'no-cache',
-    'Origin': 'https://wellness.sfc.keio.ac.jp',
-    'Upgrade-Insecure-Requests': '1',
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
-    'Referer': 'https://wellness.sfc.keio.ac.jp/v3/',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
-}
+import secrets
 
 data = {
     'login': secrets.USER_NAME,
