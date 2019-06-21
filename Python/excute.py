@@ -5,25 +5,23 @@ import bs4
 from pprint import pprint
 from secr import secrets
 
-data = {
-    'login': secrets.USER_NAME,
-    'password': secrets.PASS,
-    'submit': 'login',
-    'page': 'top',
-    'mode': 'login',
-    'semester': '20190',
-    'lang': 'ja'
-}
 
-response = requests.post(
-    secrets.BASE_URL, data=data)
-response.encoding = response.apparent_encoding
-soup = bs4.BeautifulSoup(response.text, "html.parser")
-a = soup.find_all('a')
-mypage = requests.get(secrets.BASE_URL+a[-4].get("href"))
-soup = bs4.BeautifulSoup(mypage.text, "html.parser")
-b = soup.find_all('td')
-pprint(b[2].text)
+class ClassInfo:
+    # 予約可能授業を取得する関数
+    def get_resarvatable_class():
+        response = requests.post(secrets.BASE_URL, data=secrets.data)
+        
+        response.encoding = response.apparent_encoding
+        soup = bs4.BeautifulSoup(response.text, "html.parser")
+        a = soup.find_all('a')
+        mypage = requests.get(secrets.BASE_URL+a[-4].get("href"))
+        soup = bs4.BeautifulSoup(mypage.text, "html.parser")
+        b = soup.find_all('td')
+        for i in b[2::8]:
+            print(i.text)
+
+
+ClassInfo.get_resarvatable_class()
 # 8個あるtdの内の後ろから後ろから３つ目
 
 # print(soup)
