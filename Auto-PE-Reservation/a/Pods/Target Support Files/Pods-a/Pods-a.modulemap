@@ -1,6 +1,0 @@
-framework module Pods_a {
-  umbrella header "Pods-a-umbrella.h"
-
-  export *
-  module * { export * }
-}
