@@ -7,9 +7,9 @@ final class SFCWellnessClient {
     
     private let loggedInKeywordPhrase = "loginしました．"
     
-    internal func checkValidAccount(withCNSAcount cnsAccount: String, cnsPassword: String) -> Bool {
+    internal func checkIsValidLoginInfo(_ loginInfo: LoginInfo) -> Bool {
         do {
-            let data = try Data(contentsOf: Config.shared.createLoginURL(withCNSAcount: cnsAccount, cnsPassword: cnsPassword))
+            let data = try Data(contentsOf: Config.shared.createLoginURL(withCNSAcount: loginInfo.cnsAccount, cnsPassword: loginInfo.cnsPassword))
             if let htmlNSString = NSString(data: data, encoding: String.Encoding.japaneseEUC.rawValue),
                 let doc = try? HTML(html: htmlNSString as String, encoding: .utf8),
                 let firstParagraph = doc.css("p").first,
@@ -22,21 +22,17 @@ final class SFCWellnessClient {
         }
         return false
     }
-    
-    private func createRequestHTTPBody(withCNSAcount cnsAccount: String, cnsPassword: String) -> Data {
-        return "login=\(cnsAccount)&password=\(cnsPassword)&submit=login&page=top&mode=login&semester=20190&lang=ja&limit=9999".data(using: .utf8)!
-    }
-    internal func getAttendenceCount(withCNSAcount cnsAccount: String, cnsPassword: String) -> Int {
+    internal func getAttendenceCount(withLoginInfo loginInfo: LoginInfo) -> Int {
         // TODO: 出席した回数を取って来るコード
         return 0
     }
     
-    internal func getAbsentCount(withCNSAcount cnsAccount: String, cnsPassword: String) -> Int {
+    internal func getAbsenceCount(withLoginInfo loginInfo: LoginInfo) -> Int {
         // TODO: 欠席した回数を取って来るコード
         return 0
     }
     
-    internal func getRegisteredPEClass(withCNSAcount cnsAccount: String, cnsPassword: String) -> [PEClass] {
+    internal func getRegisteredPEClass(withLoginInfo loginInfo: LoginInfo) -> [PEClass] {
         // TODO: 予約したクラスを取ってくるコード
         return []
      }

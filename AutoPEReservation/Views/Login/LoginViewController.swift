@@ -20,18 +20,16 @@ class LoginViewController: UIViewController {
                 return
             }
         
-        LoginManger.shared.attemptLogin(withCNSAcount: cnsAccount, cnsPassword: cnsPassword) { isLoggedIn in
-            if isLoggedIn {
-                let registeredAlertController = UIAlertController(title: "どうも、登録完了!!", message: nil, preferredStyle: .alert)
-                registeredAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] _ in
-                    // 画面遷移
-                    self.dismiss(animated: true, completion: nil)
-                }))
-                self.present(registeredAlertController, animated: true, completion: nil)
-            } else {
-                self.displayDefaultAlert(title: "エラー", message: "パスワードまたはIDが間違っています。")
-            }
-        }
+        LoginManger.shared.attemptLogin(withLoginInfo: LoginInfo(cnsAccount: cnsAccount, cnsPassword: cnsPassword), completion: {
+            let registeredAlertController = UIAlertController(title: "どうも、登録完了!!", message: nil, preferredStyle: .alert)
+            registeredAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] _ in
+                // 画面遷移
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(registeredAlertController, animated: true, completion: nil)
+        }, onError: {
+            self.displayDefaultAlert(title: "エラー", message: "パスワードまたはIDが間違っています。")
+        })
     }
     private func displayDefaultAlert(title: String?, message: String?){
         let defaultAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
