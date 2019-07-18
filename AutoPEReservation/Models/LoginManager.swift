@@ -4,22 +4,16 @@ final class LoginManger {
     private init() {}
     static let shared = LoginManger()
     
-    internal func checkLoginState(isLoggedInHandler: @escaping (Bool) -> Void) {
+    internal func checkLoginState() -> Bool {
         guard let cnsAccount = getSavedCNSAccount(),
             let cnsPassword = getSavedCNSPassword() else {
-                isLoggedInHandler(false)
-                return
+                return false
         }
-        SFCWellnessClient.shared.checkValidAccount(withCNSAcount: cnsAccount, cnsPassword: cnsPassword) { isLoggedIn in
-            isLoggedInHandler(isLoggedIn)
-        }
+        return SFCWellnessClient.shared.checkValidAccount(withCNSAcount: cnsAccount, cnsPassword: cnsPassword)
     }
     internal func attemptLogin(withCNSAcount cnsAccount: String, cnsPassword: String, isValidHandler: @escaping (Bool) -> Void) {
-        SFCWellnessClient.shared.checkValidAccount(withCNSAcount: cnsAccount, cnsPassword: cnsPassword) { [unowned self] isValid in
-            if isValid {
-                self.saveCNSAccountAndPassword(cnsAccount: cnsAccount, cnsPassword: cnsPassword)
-            }
-            isValidHandler(isValid)
+        if SFCWellnessClient.shared.checkValidAccount(withCNSAcount: cnsAccount, cnsPassword: cnsPassword) {
+            self.saveCNSAccountAndPassword(cnsAccount: cnsAccount, cnsPassword: cnsPassword)
         }
     }
     private func saveCNSAccountAndPassword(cnsAccount: String, cnsPassword: String) {
