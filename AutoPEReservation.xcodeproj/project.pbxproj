@@ -17,7 +17,9 @@
 		43AEBD6322D73F8D00547B89 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEBD6222D73F8D00547B89 /* Config.swift */; };
 		43AEBD6522D75D2000547B89 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEBD6422D75D2000547B89 /* MainTabBarController.swift */; };
 		43AEBD6822D75DF600547B89 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEBD6722D75DF600547B89 /* LoginManager.swift */; };
-		8DE31909A0D243E32C4D30F7 /* Pods_AutoPEReservation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41EEA84E536DBE5AF985EB4 /* Pods_AutoPEReservation.framework */; };
+		43FA450222E042EF00043B9D /* Pods_AutoPEReservation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FA450122E042EF00043B9D /* Pods_AutoPEReservation.framework */; };
+		43FA450422E0464400043B9D /* PEClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA450322E0464400043B9D /* PEClass.swift */; };
+		43FA450622E0489400043B9D /* Syllabus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA450522E0489400043B9D /* Syllabus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,9 @@
 		43AEBD6222D73F8D00547B89 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		43AEBD6422D75D2000547B89 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		43AEBD6722D75DF600547B89 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		43FA450122E042EF00043B9D /* Pods_AutoPEReservation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_AutoPEReservation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43FA450322E0464400043B9D /* PEClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEClass.swift; sourceTree = "<group>"; };
+		43FA450522E0489400043B9D /* Syllabus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syllabus.swift; sourceTree = "<group>"; };
 		47EBCA4A42455D22D5D35B10 /* Pods-AutoPEReservation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoPEReservation.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoPEReservation/Pods-AutoPEReservation.release.xcconfig"; sourceTree = "<group>"; };
 		681F527D8B638DCDB382E44B /* Pods-AutoPEReservation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoPEReservation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoPEReservation/Pods-AutoPEReservation.debug.xcconfig"; sourceTree = "<group>"; };
 		B41EEA84E536DBE5AF985EB4 /* Pods_AutoPEReservation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoPEReservation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DE31909A0D243E32C4D30F7 /* Pods_AutoPEReservation.framework in Frameworks */,
+				43FA450222E042EF00043B9D /* Pods_AutoPEReservation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				43AEBD6022D73E4500547B89 /* SFCWellnessClient.swift */,
+				43FA450522E0489400043B9D /* Syllabus.swift */,
+				43FA450322E0464400043B9D /* PEClass.swift */,
 				43AEBD6222D73F8D00547B89 /* Config.swift */,
 				43AEBD6722D75DF600547B89 /* LoginManager.swift */,
 			);
@@ -129,6 +136,7 @@
 		583204F3DDC3F862514E7C12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43FA450122E042EF00043B9D /* Pods_AutoPEReservation.framework */,
 				B41EEA84E536DBE5AF985EB4 /* Pods_AutoPEReservation.framework */,
 			);
 			name = Frameworks;
@@ -258,7 +266,9 @@
 				43AEBD5122D72F2A00547B89 /* LoginViewController.swift in Sources */,
 				43AEBD2022D72BC500547B89 /* AppDelegate.swift in Sources */,
 				43AEBD6822D75DF600547B89 /* LoginManager.swift in Sources */,
+				43FA450422E0464400043B9D /* PEClass.swift in Sources */,
 				43AEBD6522D75D2000547B89 /* MainTabBarController.swift in Sources */,
+				43FA450622E0489400043B9D /* Syllabus.swift in Sources */,
 				43AEBD6322D73F8D00547B89 /* Config.swift in Sources */,
 				43AEBD2822D72BC500547B89 /* AutoPEReservation.xcdatamodeld in Sources */,
 				43AEBD6122D73E4500547B89 /* SFCWellnessClient.swift in Sources */,
@@ -401,7 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GRXH4GD4Z2;
+				DEVELOPMENT_TEAM = 7UF72YYXVQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -411,7 +421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiro.AutoPEReservation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaishi.AutoPEReservation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,7 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GRXH4GD4Z2;
+				DEVELOPMENT_TEAM = 7UF72YYXVQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -434,7 +444,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiro.AutoPEReservation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaishi.AutoPEReservation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
