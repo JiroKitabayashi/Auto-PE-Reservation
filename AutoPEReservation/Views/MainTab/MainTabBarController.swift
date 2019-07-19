@@ -4,11 +4,13 @@ final class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoginManger.shared.checkLoginState { isLoggedIn in
-            if !isLoggedIn {
-                let loginViewController = LoginViewController()
-                self.present(loginViewController, animated: true, completion: nil)
-            }
+        if LoginManger.shared.checkLoginState() {
+            let loginViewController = LoginViewController()
+            let navigationController = UINavigationController(rootViewController: loginViewController)
+            self.present(navigationController, animated: true, completion: nil)
         }
+        let homeViewController = HomeViewController()
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        setViewControllers([navigationController], animated: true)
     }
 }
