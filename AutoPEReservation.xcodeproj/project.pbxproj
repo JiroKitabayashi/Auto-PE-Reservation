@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26FA2DD922F1F118002DBD21 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FA2DD722F1F118002DBD21 /* HomeViewController.swift */; };
+		26FA2DDA22F1F118002DBD21 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26FA2DD822F1F118002DBD21 /* HomeView.xib */; };
+		26FA2DDC22F1F289002DBD21 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FA2DDB22F1F289002DBD21 /* String.swift */; };
 		43AEBD2022D72BC500547B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEBD1F22D72BC500547B89 /* AppDelegate.swift */; };
 		43AEBD2822D72BC500547B89 /* AutoPEReservation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43AEBD2622D72BC500547B89 /* AutoPEReservation.xcdatamodeld */; };
 		43AEBD2A22D72BC600547B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43AEBD2922D72BC600547B89 /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26FA2DD722F1F118002DBD21 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		26FA2DD822F1F118002DBD21 /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		26FA2DDB22F1F289002DBD21 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		43AEBD1C22D72BC500547B89 /* AutoPEReservation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoPEReservation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43AEBD1F22D72BC500547B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43AEBD2722D72BC500547B89 /* AutoPEReservation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AutoPEReservation.xcdatamodel; sourceTree = "<group>"; };
@@ -55,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26FA2DD622F1F118002DBD21 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				26FA2DD722F1F118002DBD21 /* HomeViewController.swift */,
+				26FA2DD822F1F118002DBD21 /* HomeView.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		43AEBD1322D72BC500547B89 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +102,7 @@
 		43AEBD5922D732D000547B89 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26FA2DD622F1F118002DBD21 /* Home */,
 				43AEBD6622D75D2600547B89 /* MainTab */,
 				43AEBD5B22D732F700547B89 /* Login */,
 			);
@@ -121,6 +137,7 @@
 				43FA450322E0464400043B9D /* PEClass.swift */,
 				43AEBD6222D73F8D00547B89 /* Config.swift */,
 				43AEBD6722D75DF600547B89 /* LoginManager.swift */,
+				26FA2DDB22F1F289002DBD21 /* String.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43AEBD5822D732C800547B89 /* LoginView.xib in Resources */,
+				26FA2DDA22F1F118002DBD21 /* HomeView.xib in Resources */,
 				43AEBD2D22D72BC600547B89 /* LaunchScreen.storyboard in Resources */,
 				43AEBD2A22D72BC600547B89 /* Assets.xcassets in Resources */,
 			);
@@ -226,7 +244,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AutoPEReservation/Pods-AutoPEReservation-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AutoPEReservation/Pods-AutoPEReservation-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -235,7 +253,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoPEReservation/Pods-AutoPEReservation-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoPEReservation/Pods-AutoPEReservation-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9F5F733D780A7F37E36E901E /* [CP] Check Pods Manifest.lock */ = {
@@ -264,10 +282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				43AEBD5122D72F2A00547B89 /* LoginViewController.swift in Sources */,
+				26FA2DDC22F1F289002DBD21 /* String.swift in Sources */,
 				43AEBD2022D72BC500547B89 /* AppDelegate.swift in Sources */,
 				43AEBD6822D75DF600547B89 /* LoginManager.swift in Sources */,
 				43FA450422E0464400043B9D /* PEClass.swift in Sources */,
 				43AEBD6522D75D2000547B89 /* MainTabBarController.swift in Sources */,
+				26FA2DD922F1F118002DBD21 /* HomeViewController.swift in Sources */,
 				43FA450622E0489400043B9D /* Syllabus.swift in Sources */,
 				43AEBD6322D73F8D00547B89 /* Config.swift in Sources */,
 				43AEBD2822D72BC500547B89 /* AutoPEReservation.xcdatamodeld in Sources */,
@@ -411,7 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7UF72YYXVQ;
+				DEVELOPMENT_TEAM = GRXH4GD4Z2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -434,7 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7UF72YYXVQ;
+				DEVELOPMENT_TEAM = GRXH4GD4Z2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
