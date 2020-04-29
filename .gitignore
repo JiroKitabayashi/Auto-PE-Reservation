@@ -85,3 +85,6 @@ iOSInjectionProject/
 *.swp
 !.gitkeep
 .DS_Store
+
+# ログイン情報が書かれているため一旦ふせる
+API/api.py
