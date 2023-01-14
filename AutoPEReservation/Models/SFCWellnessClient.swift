@@ -106,12 +106,6 @@ extension String {
         return result.isEmpty ? nil : result[0]
     }
     
-    /// 正規表現でキャプチャした文字列を抽出する
-    ///
-    /// - Parameters:
-    ///   - pattern: 正規表現
-    ///   - group: 抽出するグループ番号(>=1)の配列
-    /// - Returns: 抽出した文字列の配列
     func capture(pattern: String, group: [Int]) -> [String] {
         guard let regex = try? NSRegularExpression(pattern: pattern) else {
             return []
